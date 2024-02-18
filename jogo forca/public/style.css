@@ -1,0 +1,380 @@
+body{
+    margin: 0;
+    background-image: url(./images/forest2.jpg);
+    background-repeat: no-repeat;
+    background-size: inherit;
+    background-color: rgba(128, 77, 0, 0.521);
+    display: flex;
+    justify-content: center;
+}
+#container{
+    position: absolute;
+    display: grid;
+    top: 10%;
+    width: 60%;
+    height: 60%;
+    min-width: 640px;
+    min-height: 360px;
+    max-width:  1280px;
+    max-height: 720px;
+}
+
+@media only screen and (max-height: 370px){
+    #container{
+        top:0;
+    }
+}
+
+/* Start Screen------------------------ */
+#startScreen{
+    display: grid;
+    grid-template-rows: 40% 60%;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgba(143, 151, 147, 0.945);
+    min-width: 640px;
+    min-height: 360px;   
+}
+#fullscreen{
+    font-size: 1em;
+    top: 1.2em;
+    right: 0.7em;
+    position: absolute;
+    justify-self: right;
+    background-color: rgb(194, 202, 198);    
+}
+#startDiv{
+    position: relative;
+    display: flex;
+    margin-top: auto;
+    background-color: rgba(32, 178, 171, 0.418);
+    justify-content: center;
+    align-content: center;   
+}
+#title{
+    font-family: 'Rowdies', cursive;
+    padding: 5px;
+    color: rgb(3, 61, 3);
+}
+#levelDiv{
+    justify-self: center;
+    align-self: center;
+}
+.level{
+    width: 120px;
+    height: 120px;
+    text-align: left;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    border: 2px rgba(32, 178, 171, 0.836) solid;
+    border-radius: 10%;
+    transition: 200ms transform ;
+}
+.level:hover, .level:focus{
+    outline: none;   
+    transform: rotate(11deg);
+}
+#easy{
+    background-image: url(./images/dog.jpg) ;
+}
+#normal{
+    background-image: url(./images/lion.jpg);
+}
+#hard{
+    background-image: url(./images/babuin.jpg) ;   
+}
+
+@media only screen and (max-height: 400px){
+    #startScreen{
+        background-color: rgba(143, 151, 147, 0.315);
+    }
+    #startDiv{
+        background-color: rgba(32, 178, 171, 0.801); 
+    }
+}
+
+/* Game Screen * ------------------------------*/
+#gameScreen{  
+    display: grid;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+    min-width: 640px;
+    min-height: 360px;
+    background-color: rgba(103, 173, 230, 0.562);
+    display:none;
+}
+#guess{
+    outline: none;
+    border: 1px black solid;
+    font-size: 16px;
+    color: green;
+    font-weight: bolder;    
+}
+#lifes{
+    margin-left: 2%;  
+}
+#miss{
+    border: 1px black solid;
+    font-size: large;
+    font-size: 16px;
+    font-weight: bolder;
+    background-color: white;
+}
+#score{
+    display: none;
+}
+#chances{
+    display: inline-flex;
+    width: fit-content;
+    height: fit-content;
+    padding: 4px;
+    left: 2%;
+    position: relative;
+    font-size: x-large;
+}
+input{
+    text-align: center;
+}
+.missIcon{
+    opacity: 30%;
+}
+.icons{
+    padding: 3px;
+}
+.dogIcon::after{
+    content: "\1F436";
+}
+.monkeyIcon::after{
+    content: "\1F412";
+}
+/* .orangutanIcon::after{
+    content: "\1F9A7";
+} */
+.catIcon::after{
+    content: "\1F431";
+}
+.horseIcon::after{
+    content:"\1F434";
+}
+.pigIcon::after{
+    content:"\1F437";
+}
+.rabbitIcon::after{
+    content:"\1F430";
+}
+/* .batIcon::after{
+    content:"\1F987"
+} */
+.chickenIcon::after{
+    content:"\1F414";
+}
+.babyChickIcon::after{
+    content:"\1F425";
+}
+.penguinIcon::after{
+    content:"\1F427";
+}
+/* .owlIcon::after{
+    content:"\1F989"
+} */
+/* .parrotIcon::after{
+    content:"\1F99C"
+} */
+.fishIcon::after{
+    content:"\1F41F";
+}
+.sharkIcon::after{
+    content:"\1F988";
+}
+.frogIcon::after{
+    content:"\1F438";
+}
+.dromedaryIcon::after{
+    content:"\1F42A";
+}
+.camelIcon::after{
+    content:"\1F42B";
+}
+
+#field {
+    margin: auto;
+    background-color: cornsilk;
+    list-style: none;
+    user-select: none; 
+}
+li{
+    display: inline-block;
+    margin: 25px;
+    font-family: 'Rowdies', cursive;  
+}
+.hidden {
+    width: 1vw;
+    height: fit-content;
+    color: transparent;
+    border-bottom: black 1px solid;
+}
+#alphabet{
+    width: fit-content;
+    height: fit-content;
+    background-color: cyan;
+    cursor: pointer;
+    margin: auto;
+}
+.pointList{
+    display: inline;
+    margin: 12px;  
+    font-size: larger;
+    color: rgb(44, 89, 187);
+    transition:  1s transform;
+}
+.pointList:hover{
+    color: green;
+}
+.right{
+    color:green;
+    pointer-events: none;
+}
+.wrong{
+    color: red !important;
+    pointer-events: none;
+    text-decoration: line-through black;
+} 
+
+@media only screen and (max-height: 400px){
+    #gameScreen{
+        background-color: rgba(103, 173, 230, 0.247);
+    }
+}
+@media only screen and (min-height: 700px){
+    .pointList{
+        font-size: 1.7vw;
+    }
+}
+
+/* Winner Screen ----------------------------- */
+#winScreen{
+    min-width: 640px;
+    min-height: 360px;
+    width: 100%;
+    height: 100%; 
+    background: none; 
+    display: none;
+}
+#winCard{
+    display: flex;
+    box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.45);
+    flex-direction: column;
+    margin: auto;
+    padding: 8px;
+    border: 1px solid black;
+    width: 538px;
+    height: 302px;
+}
+#name, #nomenDiv{
+    display: flex;
+    background-color: DodgerBlue;
+    width: 538px;
+    height:24px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid darkgrey;
+}
+#name{
+    font-size: large;
+    font-weight: bolder;
+}
+#nomen{
+    font-style: italic;
+}
+#insideBox{
+    height: 226px;
+    width: 512px;
+    display: flex;
+    margin: auto;
+    padding: 4px;
+    justify-content: space-between;
+}
+#infoBox{
+    width: fit-content;
+    height: fit-content;
+}
+#info{
+    display: flex;
+    margin: auto;
+    padding: 6px;
+    width: 269px;
+    height: 210px;
+    border: 1px solid darkgrey;
+    font-size: large;
+    align-items: center;
+    transition: background-color width height ;
+}
+#info:hover{
+    position: fixed;
+    background-color: lightgrey;
+    transition-delay:1s;
+    color: black;
+    font-size: 1.6vw;
+    opacity: 90%;
+    padding: 5px;
+    width: 50%;
+    height: 35%;
+}
+#picture{
+    align-self: flex-end;
+    margin: auto;
+    width: 220px;
+    height: 220px;
+    border: 1px solid darkgrey;   
+    transition: width height;
+}
+#picture:hover{
+    width: 150%;
+    height: 150%;
+    position: relative;
+    transition-delay:1s;
+}
+a, a:visited{
+    text-decoration: black;
+    color: black;
+}
+
+/* Lose Screen ------------------  */
+#loseScreen{
+    display: none;
+}
+#loseMsg{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    background-color: rgba(128, 128, 128, 0.699);
+    color: black;
+    font-size: 4vw;
+    font-family: 'Lobster', cursive;
+    align-self: center;
+    justify-self: center;
+}
+#playAgain{
+    position: static;
+    display: none;
+    opacity: 85%;
+    margin: auto;
+    border-radius: 10%;
+    width: fit-content;
+    height: fit-content;
+    min-width: 70px;
+    min-height: 42px;
+    padding: 0.7vw;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: rgba(32, 178, 171, 0.781);   
+}
+#playAgain:hover{
+    opacity: 100%;
+    box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.65);
+    cursor: pointer;
+}
+

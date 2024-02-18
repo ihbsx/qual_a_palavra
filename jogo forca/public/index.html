@@ -1,0 +1,129 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&amp;family=Rowdies:wght@700&amp;display=swap"
+    rel="stylesheet">
+  <link rel="icon" href="./meerkat.ico">
+  <title>Qual a Palavra ? - Animais</title>
+
+</head>
+
+<body>
+
+  <div id="container">
+    <button id="fullScreen" onclick="toogleFS()">+</button>
+    <div id="startScreen">
+
+      <div id="startDiv">
+        <h1 id="title"> Qual a Palavra ? - Animais </h1>
+      </div>
+      <div id="levelDiv">
+
+        <button id="easy" class="level" onclick="levelEasy()" onmouseover="changeFocus(this)" autofocus>EASY</button>
+        <button id="normal" class="level" onclick="levelNormal()" onmouseover="changeFocus(this)">NORMAL</button>
+        <button id="hard" class="level" onclick="levelHard()" onmouseover="changeFocus(this)">HARD</button>
+      </div>
+    </div>
+
+
+    <div id="gameScreen">
+
+      <div id="lifes">
+        <input id="guess" type="text" onkeyup="check(this.value)" oninput="this.value = this.value.toUpperCase()"
+          maxlength="1" size="1" autofocus="">
+        <input id="score" type="number" value="0" disabled="">
+        <input id="miss" value="" size="1" disabled="">
+        <div id="chances">
+
+        </div>
+      </div>
+
+      <ul id="field">
+
+      </ul>
+
+      <div id="alphabet">
+        <ul>
+
+          <li class="pointList A" onclick="chooseLetter(this)">A</li>
+          <li class="pointList B" onclick="chooseLetter(this)">B</li>
+          <li class="pointList C" onclick="chooseLetter(this)">C</li>
+          <li class="pointList D" onclick="chooseLetter(this)">D</li>
+          <li class="pointList E" onclick="chooseLetter(this)">E</li>
+          <li class="pointList F" onclick="chooseLetter(this)">F</li>
+          <li class="pointList G" onclick="chooseLetter(this)">G</li>
+          <li class="pointList H" onclick="chooseLetter(this)">H</li>
+          <li class="pointList I" onclick="chooseLetter(this)">I</li>
+          <li class="pointList J" onclick="chooseLetter(this)">J</li>
+          <li class="pointList K" onclick="chooseLetter(this)">K</li>
+          <li class="pointList L" onclick="chooseLetter(this)">L</li>
+          <li class="pointList M" onclick="chooseLetter(this)">M</li>
+        </ul>
+        <ul>
+          <li class="pointList N" onclick="chooseLetter(this)">N</li>
+          <li class="pointList O" onclick="chooseLetter(this)">O</li>
+          <li class="pointList P" onclick="chooseLetter(this)">P</li>
+          <li class="pointList Q" onclick="chooseLetter(this)">Q</li>
+          <li class="pointList R" onclick="chooseLetter(this)">R</li>
+          <li class="pointList S" onclick="chooseLetter(this)">S</li>
+          <li class="pointList T" onclick="chooseLetter(this)">T</li>
+          <li class="pointList U" onclick="chooseLetter(this)">U</li>
+          <li class="pointList V" onclick="chooseLetter(this)">V</li>
+          <li class="pointList W" onclick="chooseLetter(this)">W</li>
+          <li class="pointList X" onclick="chooseLetter(this)">X</li>
+          <li class="pointList Y" onclick="chooseLetter(this)">Y</li>
+          <li class="pointList Z" onclick="chooseLetter(this)">Z</li>
+        </ul>
+
+      </div>
+    </div>
+
+    <div id="loseScreen">
+
+      <div id="loseMsg">You Lose !!!</div>
+    </div>
+    <div id="winScreen">
+
+      <div id="winCard">
+        <div id="name"></div>
+        <div id="insideBox">
+          <div id="infoBox">
+            <a id="infoSource" href="" target="blank">
+              <p id="info">
+
+              </p>
+            </a>
+          </div>
+
+          <div>
+            <a id="pictureSource" href="" target="blank">
+              <img id="picture" src="">
+            </a>
+
+          </div>
+        </div>
+        <div id="nomenDiv">
+          <h3 id="nomen"></h3>
+        </div>
+      </div>
+
+    </div>
+
+
+    <button id="playAgain" onclick="restart()">Restart</button>
+
+
+
+  </div>
+  <script src="./script/library.js"></script>
+  <script src="./script/game.js"></script>
+
+
+
+</body>
+
+</html>
